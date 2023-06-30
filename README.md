@@ -10,7 +10,7 @@
 Если , вы тоже используете её , то вам нужно создать новую бд и вписать необходимые данные в settings.py
 
 <b>4)Теперь необходимо создать миграции:</b>
-  python manage.py makemigrations
+  python manage.py makemigrations 
   python manage.py migrate
   
 <b>5)Запуск проекта и создание суперпользователя:</b>
