@@ -2,12 +2,16 @@
 
 <h3>Для запуска проекта необходимо сделать:</h3>
 <b>1)Создать виртуальное окружение</b>. python -m venv venv 
+
 <b>2)Установить необходимые библиотеки</b>. pip install -r requirements.txt
+
 <b>3)В качестве БД была использована PostgreSQL</b>
 Если , вы тоже используете её , то вам нужно создать новую бд и вписать необходимые данные в settings.py
+
 <b>4)Теперь необходимо создать миграции:</b>
   python manage.py makemigrations
   python manage.py migrate
+  
 <b>5)Запуск проекта и создание суперпользователя:</b>
   python manage.py createsuperuser и дальше вводить данные по порядку
   python manage.py runserv для запуска сервера Django
