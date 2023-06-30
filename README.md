@@ -15,7 +15,7 @@
   
 <b>5)Запуск проекта и создание суперпользователя:</b>
   python manage.py createsuperuser и дальше вводить данные по порядку
-  python manage.py runserv для запуска сервера Django
+  python manage.py runserver для запуска сервера Django
 
 <b>Все необходимые действия для запуска выполнены:</b>
   Теперь можно зайти в админу Django , у меня она находится 
