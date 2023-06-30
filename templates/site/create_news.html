@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans 'Create news' %}{% endblock %}
+
+{% block content %}
+    <!-- Adding a container div with text-align: center -->
+    <div style='text-align: center;'>
+        <h1 style='margin-left:60px'>{% trans 'Create news' %}</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <div class="form-group" style='margin-top: 20px; margin-left: 40px'>
+                <label for="{{ form.title.id_for_label }}" class="control-label">{% trans 'Title' %}:</label>
+                {{ form.title }}
+            </div>
+
+            
+            <!-- Use the correct field name -->
+            <div class="form-group" style='margin-top: 20px;'>
+                <label for="{{ form.description.id_for_label }}" class="control-label">{% trans 'Description' %}:</label>
+                {{ form.description }}
+            </div>
+
+             <!-- Add the missing fields here -->
+            
+             <div class="form-group" style='margin-top: 20px;'>
+                <label for="{{ form.category.id_for_label }}" class="control-label">{% trans 'Category' %}:</label>
+                {{ form.category }}
+             </div>
+
+             {# Apply margin-top to move the image field below #}
+             <div class="form-group" style='margin-top: 20px; margin-left: 130px;'>
+                <label for="{{ form.image.id_for_label }}" class="control-label">{% trans 'Image' %}:</label>
+                {{ form.image }}
+             </div>
+
+            <!-- Include other fields if needed -->
+
+          
+              {# Center-aligning the button using margin property #}
+              <button class="btn btn-primary" style='margin-top: 20px; margin-left: 70px' type="submit" value="{% trans 'Publish' %}" style='margin: 0 auto;'>{% trans 'Publish' %}</button>
+
+        </form>
+    </div> <!-- Closing the container div -->
+{% endblock %}
+

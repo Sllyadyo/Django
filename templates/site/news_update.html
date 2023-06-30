@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans 'Update news' %}{% endblock %}
+
+{% block content %}
+<div style='text-align: center;'>
+    <h1 style='margin-left:60px'>{% trans 'Updating news' %}</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- Add container div with margin-left for title field -->
+        <div class="form-group" style='margin-top: 20px; margin-left: 40px'>
+            <label for="{{ form.title.id_for_label }}" class="control-label">{% trans 'Title' %}:</label>
+            {{ form.title }}
+        </div>
+
+
+        <!-- Use the correct field name -->
+        <div class="form-group" style='margin-top: 20px;'>
+            <label for="{{ form.description.id_for_label }}" class="control-label">{% trans 'Description' %}:</label>
+            {{ form.description }}
+        </div>
+
+        <!-- Add the missing fields here -->
+
+        <div class="form-group" style='margin-top: 20px;'>
+            <label for="{{ form.category.id_for_label }}" class="control-label">{% trans 'Category' %}:</label>
+            {{ form.category }}
+        </div>
+
+        <!-- Include other fields if needed -->
+
+
+        {# Center-aligning the button using a container div with text-align:center #}
+        <div style='text-align:center; margin-top: 20px; margin-left:60px'>
+            <button class="btn btn-primary" type="submit" value="{% trans 'Update' %}">{% trans 'Update' %}</button>
+        </div>
+
+    </form>
+</div> <!-- Closing the container div -->
+{% endblock %}
